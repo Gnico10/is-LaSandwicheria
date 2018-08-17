@@ -11,7 +11,9 @@ namespace La_Sandwicheria.Modelo
         public int Id { get; set; }
         public Producto Producto { get; set; }
         public int Cantidad { get; set; }
+        public double SubTotal => Producto.Precio * Cantidad;
 
+        public LineaDeVenta(){ }
 
         public LineaDeVenta(Producto producto, int cantidad)
         {

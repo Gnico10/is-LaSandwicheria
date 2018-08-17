@@ -11,14 +11,16 @@ namespace La_Sandwicheria.Modelo
         public int Id { get; set; }
         public string Descripcion { get; set; }
         public int Existencia { get; set; }
+        public double Precio { get; set; }
         public Rubro Rubro { get; set; }
         public List<Producto> _Agregados { get; set; }
 
         public bool IsAgregado { get; set; }
 
-        public Producto(string descripcion, int existencia, Rubro rubro, bool isAgregado = false)
+        public Producto(string descripcion, int existencia,double precio, Rubro rubro, bool isAgregado = false)
         {
             Descripcion = descripcion;
+            Precio = precio;
             Existencia = existencia;
             Rubro = rubro;
 

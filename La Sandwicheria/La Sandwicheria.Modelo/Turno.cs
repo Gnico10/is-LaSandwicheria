@@ -16,18 +16,25 @@ namespace La_Sandwicheria.Modelo
 
         private Estados _Estado { get; set; }
 
-        public Turno(double rendicion, Estados estado = Estados.Abierto)
+        public Turno(double rendicion = 0, Estados estado = Estados.Abierto)
         {
             FechaYHora = DateTime.Now;
 
             Rendicion = rendicion;
 
             _Estado = estado;
+
         }
 
-        public void CerrarTurno()
+        public void ActualizarRendicion(double SubTotal)
+        {
+            Rendicion = Rendicion + SubTotal;
+        }
+
+        public double CerrarTurno()
         {
             _Estado = Estados.Cerrado;
+            return Rendicion;
         }
     }
 }
