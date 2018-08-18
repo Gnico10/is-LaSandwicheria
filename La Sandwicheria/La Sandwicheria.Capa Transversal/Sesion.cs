@@ -1,12 +1,13 @@
-﻿using System;
+﻿using La_Sandwicheria.Modelo;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace La_Sandwicheria.Modelo
+namespace La_Sandwicheria.Capa_Transversal
 {
-    class Sesion
+    public class Sesion
     {
 
         public string Usuario { get; set; }
@@ -22,7 +23,7 @@ namespace La_Sandwicheria.Modelo
 
         public Cajero ObtenerCajero(string usuario, string contraseña)
         {
-            if(usuario == Usuario && contraseña == Contraseña)
+            if (usuario == Usuario && contraseña == Contraseña)
             {
                 return Cajero;
             }
