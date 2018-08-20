@@ -1,4 +1,5 @@
 ﻿using La_Sandwicheria.Presentadores;
+using La_Sandwicheria.Vistas;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -23,10 +24,12 @@ namespace La_Sandwicheria
 
         private void btnEntrar_Click(object sender, EventArgs e)
         {
-            if (_presentador.InicarSesion(txtUsuario.Text, txtContraseña.Text))
+            var cajeroSesion = _presentador.InicarSesion(txtUsuario.Text, txtContraseña.Text);
+            if (cajeroSesion != null)
             {
-                //var vistaMenu = new VistaMenu();
-                //vistaMenu.Show();
+                var vistaMenu = new Vistas.Menu(cajeroSesion);
+                vistaMenu.Show();
+                this.Visible = false;
             }
             else
             {

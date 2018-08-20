@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace La_Sandwicheria.Modelo
+namespace La_Sandwicheria.Modelo.Dominio
 {
     public class Producto
     {
@@ -12,27 +12,37 @@ namespace La_Sandwicheria.Modelo
         public string Descripcion { get; set; }
         public int? Existencia { get; set; }
         public double Precio { get; set; }
-        public Rubro Rubro { get; set; }
-        public List<Producto> _Agregados { get; set; }
+        public List<Producto> Agregados { get; set; }
 
+        //Diferenciar entre productos que son agregados y los que no.
         public bool IsAgregado { get; set; }
 
-        public Producto(string descripcion, int existencia,double precio, Rubro rubro, bool isAgregado = false)
+        public Producto(string descripcion, int? existencia, double precio, bool isAgregado = false)
         {
             Descripcion = descripcion;
             Precio = precio;
             Existencia = existencia;
-            Rubro = rubro;
 
             IsAgregado = isAgregado;
         }
 
-        public void AgregarAgregados(List<Producto> agregados)
+        public void AgregarAgregado(Producto agregado)
         {
-            foreach(Producto agregado in agregados)
+            if (agregado.IsAgregado == true)
             {
-                if (agregado.IsAgregado == true) _Agregados.Add(agregado);
+                Agregados.Add(agregado);
             }
+                
         }
+
+        public void RemoverAgregado(Producto agregado)
+        {
+            if (agregado.IsAgregado == true)
+            {
+                Agregados.Remove(agregado);
+            }
+                
+        }
+
     }
 }

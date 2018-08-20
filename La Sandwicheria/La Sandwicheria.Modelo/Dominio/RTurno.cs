@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace La_Sandwicheria.Modelo.Dominio
 {
-    public enum Estados
+    class RTurno
     {
-        Abierto = 1,
-        Cerrado
+        public List<Turno> Turnos = new List<Turno>();
+
     }
 }

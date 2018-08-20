@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace La_Sandwicheria.Modelo
+namespace La_Sandwicheria.Modelo.Dominio
 {
     public class Turno
     {
@@ -13,14 +13,14 @@ namespace La_Sandwicheria.Modelo
         public int Id { get; set; }
         public DateTime FechaYHora { get; set; }
         public double Rendicion { get; set; }
+        public Cajero Cajero { get; set; }
 
         private Estados _Estado { get; set; }
 
-        public Turno(double rendicion = 0, Estados estado = Estados.Abierto)
+        public Turno(Cajero cajero, Estados estado = Estados.Abierto)
         {
             FechaYHora = DateTime.Now;
-
-            Rendicion = rendicion;
+            Cajero = cajero;
 
             _Estado = estado;
 

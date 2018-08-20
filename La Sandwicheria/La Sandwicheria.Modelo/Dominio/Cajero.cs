@@ -1,27 +1,23 @@
-﻿using System;
+﻿using La_Sandwicheria.Modelo.Dominio;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace La_Sandwicheria.Modelo
+namespace La_Sandwicheria.Modelo.Dominio
 {
-    public class Cajero
+    public class Cajero : Persona
     {
 
         public int Id { get; set; }
-        public string NombreyApe { get; set;}
         public int Legajo { get; set; }
-        public int Sueldo { get; set; }
+        public double Sueldo { get; set; }
+
         public Venta VentaActual { get; set; }
 
-        //Asociacion de uno a muchos
-        //public virtual List<Turno> TurnosTermiandos { get; set; }
-        //public virtual List<Venta> VentasRealizadas { get; set; }
-
-        public Cajero(string nombreyApe, int legajo, int sueldo)
+        public Cajero(string nombreyApe, int legajo, double sueldo) : base(nombreyApe)
         {
-            NombreyApe = nombreyApe;
             Legajo = legajo;
             Sueldo = sueldo;
         }

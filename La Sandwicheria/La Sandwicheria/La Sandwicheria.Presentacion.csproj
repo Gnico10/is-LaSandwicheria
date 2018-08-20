@@ -46,7 +46,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Interfaces\INuevaVenta.cs" />
     <Compile Include="Presentadores\PresentadorLogin.cs" />
+    <Compile Include="Presentadores\PresentadorMenu.cs" />
+    <Compile Include="Presentadores\PresentadorNuevaVenta.cs" />
     <Compile Include="Vistas\Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -55,6 +58,18 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Vistas\Menu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\Menú.Designer.cs">
+      <DependentUpon>Menu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\VistaVenta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\VistaVenta.Designer.cs">
+      <DependentUpon>VistaVenta.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Vistas\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
@@ -67,6 +82,12 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Vistas\Menu.resx">
+      <DependentUpon>Menu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\VistaVenta.resx">
+      <DependentUpon>VistaVenta.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -80,13 +101,19 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Interfaces\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\La Sandwicheria.Capa Transversal\La Sandwicheria.Capa Transversal.csproj">
       <Project>{b241d32b-55c3-46be-a718-8b29b324c05c}</Project>
       <Name>La Sandwicheria.Capa Transversal</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\La Sandwicheria.Datos\La Sandwicheria.Datos.csproj">
+      <Project>{270c817c-82fe-47be-97fc-a1f67de2853b}</Project>
+      <Name>La Sandwicheria.Datos</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\La Sandwicheria.Modelo\La Sandwicheria.Modelo.csproj">
+      <Project>{3d371019-d7b4-426b-9384-99aa12461df7}</Project>
+      <Name>La Sandwicheria.Modelo</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

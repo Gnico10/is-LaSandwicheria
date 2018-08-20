@@ -1,4 +1,4 @@
-﻿using La_Sandwicheria.Modelo;
+﻿using La_Sandwicheria.Modelo.Dominio;
 using System;
 using System.Collections.Generic;
 using System.Linq;
