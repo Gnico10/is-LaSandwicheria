@@ -37,13 +37,16 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txtTotal = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.btnModificarLineaVenta = new System.Windows.Forms.Button();
-            this.btnEliminarLineaVenta = new System.Windows.Forms.Button();
             this.btnAcabarVenta = new System.Windows.Forms.Button();
             this.btnCancelarVenta = new System.Windows.Forms.Button();
+            this.bindingSourceVenta = new System.Windows.Forms.BindingSource(this.components);
             this.bindingSourceLineasDeVenta = new System.Windows.Forms.BindingSource(this.components);
+            this.subTotalDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cantidadDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.productoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSourceVenta)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceLineasDeVenta)).BeginInit();
             this.SuspendLayout();
             // 
@@ -79,10 +82,19 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.productoDataGridViewTextBoxColumn,
+            this.cantidadDataGridViewTextBoxColumn,
+            this.subTotalDataGridViewTextBoxColumn});
+            this.dataGridView1.DataSource = this.bindingSourceLineasDeVenta;
             this.dataGridView1.Location = new System.Drawing.Point(6, 34);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(365, 264);
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.Size = new System.Drawing.Size(344, 264);
             this.dataGridView1.TabIndex = 7;
             // 
             // btnNuevaLineaVenta
@@ -93,6 +105,7 @@
             this.btnNuevaLineaVenta.TabIndex = 9;
             this.btnNuevaLineaVenta.Text = "Nueva linea de venta";
             this.btnNuevaLineaVenta.UseVisualStyleBackColor = true;
+            this.btnNuevaLineaVenta.Click += new System.EventHandler(this.btnNuevaLineaVenta_Click);
             // 
             // groupBox1
             // 
@@ -109,6 +122,7 @@
             // 
             // txtTotal
             // 
+            this.txtTotal.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindingSourceVenta, "Total", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.txtTotal.Location = new System.Drawing.Point(240, 315);
             this.txtTotal.Name = "txtTotal";
             this.txtTotal.ReadOnly = true;
@@ -123,24 +137,6 @@
             this.label3.Size = new System.Drawing.Size(48, 20);
             this.label3.TabIndex = 8;
             this.label3.Text = "Total:";
-            // 
-            // btnModificarLineaVenta
-            // 
-            this.btnModificarLineaVenta.Location = new System.Drawing.Point(419, 121);
-            this.btnModificarLineaVenta.Name = "btnModificarLineaVenta";
-            this.btnModificarLineaVenta.Size = new System.Drawing.Size(188, 41);
-            this.btnModificarLineaVenta.TabIndex = 11;
-            this.btnModificarLineaVenta.Text = "Modificar linea de venta";
-            this.btnModificarLineaVenta.UseVisualStyleBackColor = true;
-            // 
-            // btnEliminarLineaVenta
-            // 
-            this.btnEliminarLineaVenta.Location = new System.Drawing.Point(419, 168);
-            this.btnEliminarLineaVenta.Name = "btnEliminarLineaVenta";
-            this.btnEliminarLineaVenta.Size = new System.Drawing.Size(188, 41);
-            this.btnEliminarLineaVenta.TabIndex = 12;
-            this.btnEliminarLineaVenta.Text = "Eliminar linea de venta";
-            this.btnEliminarLineaVenta.UseVisualStyleBackColor = true;
             // 
             // btnAcabarVenta
             // 
@@ -159,6 +155,36 @@
             this.btnCancelarVenta.TabIndex = 14;
             this.btnCancelarVenta.Text = "Cancelar venta";
             this.btnCancelarVenta.UseVisualStyleBackColor = true;
+            this.btnCancelarVenta.Click += new System.EventHandler(this.btnCancelarVenta_Click);
+            // 
+            // bindingSourceVenta
+            // 
+            this.bindingSourceVenta.DataSource = typeof(La_Sandwicheria.Modelo.Dominio.Venta);
+            // 
+            // bindingSourceLineasDeVenta
+            // 
+            this.bindingSourceLineasDeVenta.DataSource = typeof(La_Sandwicheria.Modelo.Dominio.LineaDeVenta);
+            // 
+            // subTotalDataGridViewTextBoxColumn
+            // 
+            this.subTotalDataGridViewTextBoxColumn.DataPropertyName = "SubTotal";
+            this.subTotalDataGridViewTextBoxColumn.HeaderText = "SubTotal";
+            this.subTotalDataGridViewTextBoxColumn.Name = "subTotalDataGridViewTextBoxColumn";
+            this.subTotalDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // cantidadDataGridViewTextBoxColumn
+            // 
+            this.cantidadDataGridViewTextBoxColumn.DataPropertyName = "Cantidad";
+            this.cantidadDataGridViewTextBoxColumn.HeaderText = "Cantidad";
+            this.cantidadDataGridViewTextBoxColumn.Name = "cantidadDataGridViewTextBoxColumn";
+            this.cantidadDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // productoDataGridViewTextBoxColumn
+            // 
+            this.productoDataGridViewTextBoxColumn.DataPropertyName = "Producto";
+            this.productoDataGridViewTextBoxColumn.HeaderText = "Producto";
+            this.productoDataGridViewTextBoxColumn.Name = "productoDataGridViewTextBoxColumn";
+            this.productoDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // VistaVenta
             // 
@@ -167,8 +193,6 @@
             this.ClientSize = new System.Drawing.Size(624, 441);
             this.Controls.Add(this.btnCancelarVenta);
             this.Controls.Add(this.btnAcabarVenta);
-            this.Controls.Add(this.btnEliminarLineaVenta);
-            this.Controls.Add(this.btnModificarLineaVenta);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnNuevaLineaVenta);
             this.Controls.Add(this.label4);
@@ -179,6 +203,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSourceVenta)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceLineasDeVenta)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -193,12 +218,14 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button btnNuevaLineaVenta;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button btnModificarLineaVenta;
-        private System.Windows.Forms.Button btnEliminarLineaVenta;
         private System.Windows.Forms.TextBox txtTotal;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnAcabarVenta;
         private System.Windows.Forms.Button btnCancelarVenta;
         private System.Windows.Forms.BindingSource bindingSourceLineasDeVenta;
+        private System.Windows.Forms.BindingSource bindingSourceVenta;
+        private System.Windows.Forms.DataGridViewTextBoxColumn productoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cantidadDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn subTotalDataGridViewTextBoxColumn;
     }
 }

@@ -12,7 +12,7 @@ namespace La_Sandwicheria.Modelo.Dominio
         public string Descripcion { get; set; }
         public int? Existencia { get; set; }
         public double Precio { get; set; }
-        public List<Producto> Agregados { get; set; }
+        public List<Producto> Agregados = new List<Producto>();
 
         //Diferenciar entre productos que son agregados y los que no.
         public bool IsAgregado { get; set; }

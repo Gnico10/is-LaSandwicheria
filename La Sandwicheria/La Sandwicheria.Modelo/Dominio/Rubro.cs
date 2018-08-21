@@ -12,7 +12,7 @@ namespace La_Sandwicheria.Modelo.Dominio
         public string Descripcion { get; set; }
 
         //Lista de Productos que pertenecen al rubro
-        public List<Producto> ListaProductos { get; set; }
+        public List<Producto> ListaProductos = new List<Producto>();
 
         public Rubro(string descripcion)
         {

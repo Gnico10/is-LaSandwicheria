@@ -14,16 +14,15 @@ namespace La_Sandwicheria.Modelo.Dominio
         public int Legajo { get; set; }
         public double Sueldo { get; set; }
 
-        public Venta VentaActual { get; set; }
-
         public Cajero(string nombreyApe, int legajo, double sueldo) : base(nombreyApe)
         {
             Legajo = legajo;
             Sueldo = sueldo;
         }
 
-        public void InicarVenta() {
-            VentaActual = new Venta();
+        public Venta InicarVenta() {
+            var VentaActual = new Venta(this);
+            return VentaActual;
         }
 
     }

@@ -17,20 +17,31 @@ namespace La_Sandwicheria.Vistas
     {
         private readonly PresentadorNuevaVenta _presentador;
 
-        public VistaVenta(Cajero cajeroAct)
+        public VistaVenta(Cajero cajeroAct, Turno turnoAct)
         {
-            _presentador = new PresentadorNuevaVenta(cajeroAct,this);
+            _presentador = new PresentadorNuevaVenta(cajeroAct, turnoAct, this);
             InitializeComponent();
         }
 
         public void CargarLineasDeVenta(List<LineaDeVenta> lineasDeVenta)
         {
-            throw new NotImplementedException();
+            bindingSourceLineasDeVenta.DataSource = lineasDeVenta;
+            bindingSourceLineasDeVenta.ResetBindings(false);
         }
 
-        public void Inicar(LineaDeVenta lineaDeVenta)
+        private void btnNuevaLineaVenta_Click(object sender, EventArgs e)
         {
-            throw new NotImplementedException();
+            var VistaNuevaLineaVenta = new VistaLineaDeVenta(_presentador.VentaActual);
+            VistaNuevaLineaVenta.ShowDialog();
+
+            //Cargar nueva linea de venta
+            _presentador.CargarLineasDeVenta();
+
+        }
+
+        private void btnCancelarVenta_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

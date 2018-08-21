@@ -46,10 +46,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Interfaces\IEditarAgregados.cs" />
+    <Compile Include="Interfaces\ILineaDeVenta.cs" />
     <Compile Include="Interfaces\INuevaVenta.cs" />
+    <Compile Include="Presentadores\PresentadorEditarAgregados.cs" />
+    <Compile Include="Presentadores\PresentadorLineaDeVenta.cs" />
     <Compile Include="Presentadores\PresentadorLogin.cs" />
     <Compile Include="Presentadores\PresentadorMenu.cs" />
     <Compile Include="Presentadores\PresentadorNuevaVenta.cs" />
+    <Compile Include="Vistas\VistaEditarAgregados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\VistaEditarAgregados.Designer.cs">
+      <DependentUpon>VistaEditarAgregados.cs</DependentUpon>
+    </Compile>
     <Compile Include="Vistas\Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -63,6 +73,12 @@
     </Compile>
     <Compile Include="Vistas\Menú.Designer.cs">
       <DependentUpon>Menu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\VistaLineaDeVenta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\VistaLineaDeVenta.Designer.cs">
+      <DependentUpon>VistaLineaDeVenta.cs</DependentUpon>
     </Compile>
     <Compile Include="Vistas\VistaVenta.cs">
       <SubType>Form</SubType>
@@ -85,9 +101,19 @@
     <EmbeddedResource Include="Vistas\Menu.resx">
       <DependentUpon>Menu.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\VistaEditarAgregados.resx">
+      <DependentUpon>VistaEditarAgregados.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\VistaLineaDeVenta.resx">
+      <DependentUpon>VistaLineaDeVenta.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Vistas\VistaVenta.resx">
       <DependentUpon>VistaVenta.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="Properties\DataSources\La_Sandwicheria.Modelo.Dominio.LineaDeVenta.datasource" />
+    <None Include="Properties\DataSources\La_Sandwicheria.Modelo.Dominio.Producto.datasource" />
+    <None Include="Properties\DataSources\La_Sandwicheria.Modelo.Dominio.Rubro.datasource" />
+    <None Include="Properties\DataSources\La_Sandwicheria.Modelo.Dominio.Venta.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

@@ -14,24 +14,34 @@ namespace La_Sandwicheria.Modelo.Dominio
 
         public double SubTotal { get; set; }
 
-        public LineaDeVenta(Producto producto, int cantidad)
+        public LineaDeVenta(int cantidad = 1) { Cantidad = cantidad; }
+
+        public LineaDeVenta(Producto producto, int cantidad = 1)
         {
             Producto = producto;
             Cantidad = cantidad;
 
-            SubTotal = ActualizarSubTotal();
+            ActualizarSubTotal();
         }
 
-        public double ActualizarSubTotal()
+        public void ActualizarSubTotal()
         {
-            var valor = Producto.Precio * Cantidad;
+            var valor = Producto.Precio;
 
             foreach (var agregado in Producto.Agregados)
             {
                 valor += agregado.Precio;
             }
 
-            return valor;
+            valor *= Cantidad;
+
+            SubTotal = valor;
+        }
+
+        public void AgregarAgregadoProducto(Producto agregado)
+        {
+            Producto.AgregarAgregado(agregado);
+            ActualizarSubTotal();
         }
     }
 }

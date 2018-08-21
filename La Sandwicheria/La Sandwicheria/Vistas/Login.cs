@@ -28,8 +28,8 @@ namespace La_Sandwicheria
             if (cajeroSesion != null)
             {
                 var vistaMenu = new Vistas.Menu(cajeroSesion);
-                vistaMenu.Show();
-                this.Visible = false;
+                this.Hide();
+                vistaMenu.ShowDialog();
             }
             else
             {

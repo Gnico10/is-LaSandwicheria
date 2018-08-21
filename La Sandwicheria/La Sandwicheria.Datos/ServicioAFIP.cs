@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace La_Sandwicheria.Datos
 {
-    public class Class1
+    public class ServicioAFIP
     {
+        //Conección servicio web de la AFIP
     }
 }
