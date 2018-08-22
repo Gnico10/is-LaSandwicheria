@@ -10,6 +10,7 @@ namespace La_Sandwicheria.Modelo.Dominio
     {
         public int Id { get; set; }
         public Producto Producto { get; set; }
+        public string DescripcionProducto => Producto.Descripcion;
         public int Cantidad { get; set; }
 
         public double SubTotal { get; set; }
@@ -42,6 +43,16 @@ namespace La_Sandwicheria.Modelo.Dominio
         {
             Producto.AgregarAgregado(agregado);
             ActualizarSubTotal();
+        }
+
+        internal void RestarExistencia()
+        {
+            Producto.RestarExistencia(Cantidad);
+
+            //foreach (var agregado in Producto.Agregados)
+            //{
+            //    agregado.RestarExistencia(Cantidad);
+            //}
         }
     }
 }

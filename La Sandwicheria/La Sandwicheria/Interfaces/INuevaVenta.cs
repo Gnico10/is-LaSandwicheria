@@ -9,6 +9,7 @@ namespace La_Sandwicheria.Interfaces
 {
     public interface INuevaVenta
     {
+        void ColocarVentaAct(Venta venta);
         void CargarLineasDeVenta(List<LineaDeVenta> lineasDeVenta);
     }
 }

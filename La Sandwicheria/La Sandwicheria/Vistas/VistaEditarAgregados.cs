@@ -37,7 +37,8 @@ namespace La_Sandwicheria.Vistas
 
         private void btnQuitar_Click(object sender, EventArgs e)
         {
-            _presentador.QuitarAgregado(bindingSourceProdAgregados.Current as Producto);
+            var AgregadoSelect = bindingSourceProdAgregados.Current as Producto;
+            if(AgregadoSelect != null) _presentador.QuitarAgregado(AgregadoSelect);
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)

@@ -1,4 +1,4 @@
-﻿using La_Sandwicheria.Datos.Almacen;
+﻿using La_Sandwicheria.Datos.Base_de_Datos;
 using La_Sandwicheria.Interfaces;
 using La_Sandwicheria.Modelo.Dominio;
 using System;
@@ -25,7 +25,7 @@ namespace La_Sandwicheria.Presentadores
 
         public void CargarRubrosYLineaDeVenta()
         {
-            _vista.CargarRubros(Almacen.Rubros);
+            _vista.CargarRubros(DBAlmacen.Rubros);
             _vista.ColocarLineaDeVenta(LineaActual);
         }
 
@@ -42,7 +42,7 @@ namespace La_Sandwicheria.Presentadores
 
         internal void ActualizarSubTotal(string cantidad)
         {
-            if (cantidad == null)
+            if (cantidad != null || cantidad != "")
             {
                 if (LineaActual.Producto != null)
                 {

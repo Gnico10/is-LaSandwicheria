@@ -10,8 +10,20 @@ namespace La_Sandwicheria.Datos
 {
     public class ServiceClienteVicente
     {
-        public LoginServiceClient client = new LoginServiceClient(Configuraciones.CodigoDeGrupo);
-        public Autorizacion autorizacion = new Autorizacion();
+        //public LoginServiceClient client = new LoginServiceClient(Configuraciones.CodigoDeGrupo);
+        //public Autorizacion autorizacion = new Autorizacion();
+        public LoginServiceClient client { get; set; }
+        public Autorizacion Autorizacion { get; set; }
+        
+
+        public void SolicitarAutorizacion()
+        {
+            using (client = new LoginServiceClient())
+            {
+                Autorizacion = client.SolicitarAutorizacion(Configuraciones.CodigoDeGrupo);
+            }
+        }
+
 
         public void CerrarClient()
         {

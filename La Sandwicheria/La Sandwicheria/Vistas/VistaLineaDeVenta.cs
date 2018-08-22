@@ -60,13 +60,14 @@ namespace La_Sandwicheria.Vistas
 
         private void txtCantidad_TextChanged(object sender, EventArgs e)
         {
-            _presentador.ActualizarSubTotal(txtCantidad.Text);
+                _presentador.ActualizarSubTotal(txtCantidad.Text);
         }
 
         private void btnEditarAgregados_Click(object sender, EventArgs e)
         {
             var VistaEditarAgregados = new VistaEditarAgregados(bindingSourceProducto.Current as Producto);
             VistaEditarAgregados.ShowDialog();
+                _presentador.ActualizarSubTotal(txtCantidad.Text);
         }
 
         private void btnAceptar_Click(object sender, EventArgs e)

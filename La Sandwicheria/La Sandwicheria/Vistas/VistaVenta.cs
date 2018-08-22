@@ -19,8 +19,13 @@ namespace La_Sandwicheria.Vistas
 
         public VistaVenta(Cajero cajeroAct, Turno turnoAct)
         {
-            _presentador = new PresentadorNuevaVenta(cajeroAct, turnoAct, this);
             InitializeComponent();
+            _presentador = new PresentadorNuevaVenta(cajeroAct, turnoAct, this);
+        }
+
+        public void ColocarVentaAct(Venta venta)
+        {
+            bindingSourceVenta.DataSource = venta;
         }
 
         public void CargarLineasDeVenta(List<LineaDeVenta> lineasDeVenta)
@@ -41,6 +46,13 @@ namespace La_Sandwicheria.Vistas
 
         private void btnCancelarVenta_Click(object sender, EventArgs e)
         {
+            Close();
+        }
+
+        private void btnAcabarVenta_Click(object sender, EventArgs e)
+        {
+            _presentador.TerminarVenta();
+            MessageBox.Show("La nueva venta fue creada\n Comprobante emitido", "Exito!!", MessageBoxButtons.OK, MessageBoxIcon.Information);
             Close();
         }
     }

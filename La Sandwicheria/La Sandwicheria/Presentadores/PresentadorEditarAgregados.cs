@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using La_Sandwicheria.Modelo.Dominio;
 using La_Sandwicheria.Vistas;
 using La_Sandwicheria.Interfaces;
-using La_Sandwicheria.Datos.Almacen;
+using La_Sandwicheria.Datos.Base_de_Datos;
 
 namespace La_Sandwicheria.Presentadores
 {
@@ -20,18 +20,18 @@ namespace La_Sandwicheria.Presentadores
             _productoSeleccionado = productoSelec;
             _vista = vistaEditarAgregados;
 
-            CargarAgreagadosDelProducto();
+            CargarAgregadosDelProducto();
             CargarAgregados();
         }
 
-        public void CargarAgreagadosDelProducto()
+        public void CargarAgregadosDelProducto()
         {
             _vista.CargarAgregadosProducto(_productoSeleccionado.Agregados);
         }
 
         public void CargarAgregados()
         {
-            var RubroAgreg = Almacen.Rubros.Find(rubro => rubro.Descripcion == "Agregados");
+            var RubroAgreg = DBAlmacen.Rubros.Find(rubro => rubro.Descripcion == "Agregados");
             _vista.ListarAgregados(RubroAgreg.ListaProductos);
 
         }

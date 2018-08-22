@@ -12,14 +12,15 @@ namespace La_Sandwicheria.Modelo.Dominio
 
         public int Id { get; set; }
         public Cajero Cajero { get; set; }
-        public DateTime FechaYHora { get; set; }
+        public DateTime FechaYHoraInicio { get; set; }
+        public DateTime FechaYHoraCierre { get; set; }
         public double Rendicion { get; set; }
         public List<Venta> VentasDelTurno = new List<Venta>();
         private Estados _Estado { get; set; }
 
         public Turno(Cajero cajero, Estados estado = Estados.Abierto)
         {
-            FechaYHora = DateTime.Now;
+            FechaYHoraInicio = DateTime.Now;
             Cajero = cajero;
 
             _Estado = estado;
@@ -29,11 +30,13 @@ namespace La_Sandwicheria.Modelo.Dominio
         public void AgregarVenta(Venta venta)
         {
             VentasDelTurno.Add(venta);
+            ActualizarRendicion();
         }
 
         public void ActualizarRendicion()
         {
             var rend = 0.0;
+
             foreach (var venta in VentasDelTurno)
             {
                 rend += venta.Total;
@@ -44,6 +47,7 @@ namespace La_Sandwicheria.Modelo.Dominio
 
         public void CerrarTurno()
         {
+            FechaYHoraCierre = DateTime.Now;
             _Estado = Estados.Cerrado;
         }
     }

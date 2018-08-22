@@ -40,10 +40,10 @@
             this.btnAcabarVenta = new System.Windows.Forms.Button();
             this.btnCancelarVenta = new System.Windows.Forms.Button();
             this.bindingSourceVenta = new System.Windows.Forms.BindingSource(this.components);
-            this.bindingSourceLineasDeVenta = new System.Windows.Forms.BindingSource(this.components);
-            this.subTotalDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cantidadDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.productoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cantidadDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.subTotalDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bindingSourceLineasDeVenta = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceVenta)).BeginInit();
@@ -146,6 +146,7 @@
             this.btnAcabarVenta.TabIndex = 13;
             this.btnAcabarVenta.Text = "Acabar venta";
             this.btnAcabarVenta.UseVisualStyleBackColor = true;
+            this.btnAcabarVenta.Click += new System.EventHandler(this.btnAcabarVenta_Click);
             // 
             // btnCancelarVenta
             // 
@@ -161,16 +162,12 @@
             // 
             this.bindingSourceVenta.DataSource = typeof(La_Sandwicheria.Modelo.Dominio.Venta);
             // 
-            // bindingSourceLineasDeVenta
+            // productoDataGridViewTextBoxColumn
             // 
-            this.bindingSourceLineasDeVenta.DataSource = typeof(La_Sandwicheria.Modelo.Dominio.LineaDeVenta);
-            // 
-            // subTotalDataGridViewTextBoxColumn
-            // 
-            this.subTotalDataGridViewTextBoxColumn.DataPropertyName = "SubTotal";
-            this.subTotalDataGridViewTextBoxColumn.HeaderText = "SubTotal";
-            this.subTotalDataGridViewTextBoxColumn.Name = "subTotalDataGridViewTextBoxColumn";
-            this.subTotalDataGridViewTextBoxColumn.ReadOnly = true;
+            this.productoDataGridViewTextBoxColumn.DataPropertyName = "DescripcionProducto";
+            this.productoDataGridViewTextBoxColumn.HeaderText = "Producto";
+            this.productoDataGridViewTextBoxColumn.Name = "productoDataGridViewTextBoxColumn";
+            this.productoDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // cantidadDataGridViewTextBoxColumn
             // 
@@ -179,12 +176,16 @@
             this.cantidadDataGridViewTextBoxColumn.Name = "cantidadDataGridViewTextBoxColumn";
             this.cantidadDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // productoDataGridViewTextBoxColumn
+            // subTotalDataGridViewTextBoxColumn
             // 
-            this.productoDataGridViewTextBoxColumn.DataPropertyName = "Producto";
-            this.productoDataGridViewTextBoxColumn.HeaderText = "Producto";
-            this.productoDataGridViewTextBoxColumn.Name = "productoDataGridViewTextBoxColumn";
-            this.productoDataGridViewTextBoxColumn.ReadOnly = true;
+            this.subTotalDataGridViewTextBoxColumn.DataPropertyName = "SubTotal";
+            this.subTotalDataGridViewTextBoxColumn.HeaderText = "SubTotal";
+            this.subTotalDataGridViewTextBoxColumn.Name = "subTotalDataGridViewTextBoxColumn";
+            this.subTotalDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // bindingSourceLineasDeVenta
+            // 
+            this.bindingSourceLineasDeVenta.DataSource = typeof(La_Sandwicheria.Modelo.Dominio.LineaDeVenta);
             // 
             // VistaVenta
             // 
@@ -223,9 +224,9 @@
         private System.Windows.Forms.Button btnAcabarVenta;
         private System.Windows.Forms.Button btnCancelarVenta;
         private System.Windows.Forms.BindingSource bindingSourceLineasDeVenta;
-        private System.Windows.Forms.BindingSource bindingSourceVenta;
         private System.Windows.Forms.DataGridViewTextBoxColumn productoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn cantidadDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn subTotalDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource bindingSourceVenta;
     }
 }

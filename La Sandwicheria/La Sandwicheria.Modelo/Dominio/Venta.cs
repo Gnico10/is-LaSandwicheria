@@ -12,6 +12,7 @@ namespace La_Sandwicheria.Modelo.Dominio
         public Cajero CajeroDeVenta { get; set; }
         public DateTime FechaDeCreación { get; set; }
         public List<LineaDeVenta> LineasDeVenta = new List<LineaDeVenta>();
+        public Comprobante Comprobante { get; set; }
         public double Total { get; set; }
 
 
@@ -40,10 +41,19 @@ namespace La_Sandwicheria.Modelo.Dominio
             ActualizarTotalVenta();
         }
 
+        public void RestarExistencia()
+        {
+            foreach (var Linea in LineasDeVenta)
+            {
+                Linea.RestarExistencia();
+            }
+        }
+
         public Comprobante GenerarComprobante()
         {
-            var Comprobante = new Comprobante(this);
-            return Comprobante;
+            var comprobante = new Comprobante(Total);
+            Comprobante = comprobante;
+            return comprobante;
         }
 
         public LineaDeVenta CrearLineaDeVenta()

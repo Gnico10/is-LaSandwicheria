@@ -44,5 +44,12 @@ namespace La_Sandwicheria.Modelo.Dominio
                 
         }
 
+        internal void RestarExistencia(int cantidad)
+        {
+            if (Existencia != null || Existencia > 0)
+            {
+                Existencia -= cantidad;
+            }
+        }
     }
 }

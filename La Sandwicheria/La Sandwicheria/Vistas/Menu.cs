@@ -30,7 +30,7 @@ namespace La_Sandwicheria.Vistas
 
         private void btnCerrarTurno_Click(object sender, EventArgs e)
         {
-            DialogResult Opcion = MessageBox.Show($"¿Desea cerrar el Turno actual? \n\n Turno de: {_presentador.CajeroSesionAct.NombreYApe}\n Inicio del turno: {_presentador.TurnoAct.FechaYHora}\n\n Recaudación del turno: $ {_presentador.TurnoAct.Rendicion}","Cerrar Turno",MessageBoxButtons.OKCancel,MessageBoxIcon.Question);
+            DialogResult Opcion = MessageBox.Show($"¿Desea cerrar el Turno actual? \n\n Turno de: {_presentador.CajeroSesionAct.NombreYApe}\n Inicio del turno: {_presentador.TurnoAct.FechaYHoraInicio}\n\n Recaudación del turno: $ {_presentador.TurnoAct.Rendicion}","Cerrar Turno",MessageBoxButtons.OKCancel,MessageBoxIcon.Question);
             if (Opcion == DialogResult.OK)
             {
                 _presentador.CerrarTurno();

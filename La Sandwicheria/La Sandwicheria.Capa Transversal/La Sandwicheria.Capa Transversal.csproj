@@ -40,12 +40,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Configuraciones\Configuraciones.cs" />
-    <Compile Include="Configuraciones\TiposComprobantes.cs" />
-    <Compile Include="Configuraciones\TiposConceptos.cs" />
-    <Compile Include="Configuraciones\TiposDocumentos.cs" />
-    <Compile Include="Configuraciones\TiposIVA.cs" />
-    <Compile Include="Configuraciones\TiposTributos.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Sesion.cs" />
   </ItemGroup>
