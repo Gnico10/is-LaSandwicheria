@@ -26,20 +26,25 @@ namespace La_Sandwicheria.Vistas
         public void CargarProductos(List<Producto> Productos)
         {
             bindingSourceProducto.DataSource = Productos;
+            bindingSourceLineaDeVenta.ResetBindings(false);
         }
 
         public void CargarRubros(List<Rubro> Rubros)
         {
             bindingSourcerRubro.DataSource = Rubros;
+            bindingSourcerRubro.ResetBindings(false);
         }
+
         public void ColocarLineaDeVenta(LineaDeVenta LineaDeVenta)
         {
             bindingSourceLineaDeVenta.DataSource = LineaDeVenta;
+            bindingSourceLineaDeVenta.ResetBindings(false);
         }
 
         private void cbxRubro_SelectedChangeComn(object sender, EventArgs e)
         {
-            var RubroSelecionado = bindingSourcerRubro.Current as Rubro;
+            var RubroSelecionado = cbxRubro.SelectedItem as Rubro;
+            //var RubroSelecionado = bindingSourcerRubro.Current as Rubro;
             _presentador.CargarProductos(RubroSelecionado);
         }
 
@@ -56,11 +61,7 @@ namespace La_Sandwicheria.Vistas
                 _presentador.ColocarProductoSeleccionado(ProductoSeleccionado);
                 btnEditarAgregados.Enabled = true;
             }
-        }
-
-        private void txtCantidad_TextChanged(object sender, EventArgs e)
-        {
-                _presentador.ActualizarSubTotal(txtCantidad.Text);
+            bindingSourceLineaDeVenta.ResetBindings(false);
         }
 
         private void btnEditarAgregados_Click(object sender, EventArgs e)
@@ -68,12 +69,26 @@ namespace La_Sandwicheria.Vistas
             var VistaEditarAgregados = new VistaEditarAgregados(bindingSourceProducto.Current as Producto);
             VistaEditarAgregados.ShowDialog();
                 _presentador.ActualizarSubTotal(txtCantidad.Text);
+            bindingSourceLineaDeVenta.ResetBindings(false);
         }
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-            _presentador.TerminarLineaDeVenta();
-            Close();
+            if (_presentador.LineaActual.Producto != null)
+            {
+                _presentador.TerminarLineaDeVenta();
+                Close();
+            }
+            else
+            {
+                MessageBox.Show("No seleccionó ningún Producto", "ERROR!!",MessageBoxButtons.OK,MessageBoxIcon.Error);
+            }
+        }
+
+        private void txtCantidad_TextChanged(object sender, EventArgs e)
+        {
+            bindingSourceProducto.ResetBindings(true);
+            _presentador.ActualizarSubTotal(txtCantidad.Text);
         }
     }
 }

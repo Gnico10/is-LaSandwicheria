@@ -22,11 +22,17 @@ namespace La_Sandwicheria.Modelo.Dominio
             Producto = producto;
             Cantidad = cantidad;
 
-            ActualizarSubTotal();
+            ActualizarSubTotal(cantidad);
         }
 
-        public void ActualizarSubTotal()
+        public void ActualizarSubTotal(int cantidad = 1)
         {
+            if (Cantidad != cantidad)
+            {
+                Cantidad = cantidad;
+            }
+            
+
             var valor = Producto.Precio;
 
             foreach (var agregado in Producto.Agregados)
@@ -48,11 +54,6 @@ namespace La_Sandwicheria.Modelo.Dominio
         internal void RestarExistencia()
         {
             Producto.RestarExistencia(Cantidad);
-
-            //foreach (var agregado in Producto.Agregados)
-            //{
-            //    agregado.RestarExistencia(Cantidad);
-            //}
         }
     }
 }

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DiscoveryClientResultsFile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Results>
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.ContractReference" url="http://ds.dyndns.org:9000/AuthorizationService?wsdl=wsdl0" filename="AuthorizationService.wsdl" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.ContractReference" url="http://ds.dyndns.org:9000/AuthorizationService?wsdl" filename="LoginService.wsdl" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="http://ds.dyndns.org:9000/AuthorizationService?xsd=xsd1" filename="AuthorizationService.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="http://ds.dyndns.org:9000/AuthorizationService?xsd=xsd2" filename="AuthorizationService0.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="http://ds.dyndns.org:9000/AuthorizationService?xsd=xsd0" filename="AuthorizationService1.xsd" />
+  </Results>
+</DiscoveryClientResultsFile>

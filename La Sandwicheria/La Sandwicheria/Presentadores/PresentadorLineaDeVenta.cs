@@ -19,13 +19,17 @@ namespace La_Sandwicheria.Presentadores
         {
             VentaAct = ventAct;
             LineaActual = VentaAct.CrearLineaDeVenta();
+
             _vista = vista;
+
             CargarRubrosYLineaDeVenta();
         }
 
         public void CargarRubrosYLineaDeVenta()
         {
+            DBAlmacen.CargarProductos();
             _vista.CargarRubros(DBAlmacen.Rubros);
+
             _vista.ColocarLineaDeVenta(LineaActual);
         }
 
@@ -40,13 +44,13 @@ namespace La_Sandwicheria.Presentadores
             LineaActual.ActualizarSubTotal();
         }
 
-        internal void ActualizarSubTotal(string cantidad)
+        internal void ActualizarSubTotal(String cantidad)
         {
-            if (cantidad != null || cantidad != "")
+            if (cantidad != "")
             {
                 if (LineaActual.Producto != null)
                 {
-                    LineaActual.ActualizarSubTotal();
+                    LineaActual.ActualizarSubTotal(int.Parse(cantidad));
                 }
             }
         }

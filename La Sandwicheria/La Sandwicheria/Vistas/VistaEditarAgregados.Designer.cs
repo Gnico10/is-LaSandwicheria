@@ -33,22 +33,22 @@
             this.btnQuitar = new System.Windows.Forms.Button();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.btnAceptar = new System.Windows.Forms.Button();
             this.descripcionDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.existenciaDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.precioDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bindingSourceAgregados = new System.Windows.Forms.BindingSource(this.components);
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.descripcionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.existenciaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.precioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bindingSourceProdAgregados = new System.Windows.Forms.BindingSource(this.components);
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.btnAceptar = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSourceAgregados)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSourceAgregados)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceProdAgregados)).BeginInit();
             this.SuspendLayout();
             // 
@@ -104,33 +104,6 @@
             this.dataGridView2.Size = new System.Drawing.Size(285, 236);
             this.dataGridView2.TabIndex = 3;
             // 
-            // descripcionDataGridViewTextBoxColumn1
-            // 
-            this.descripcionDataGridViewTextBoxColumn1.DataPropertyName = "Descripcion";
-            this.descripcionDataGridViewTextBoxColumn1.HeaderText = "Descripcion";
-            this.descripcionDataGridViewTextBoxColumn1.Name = "descripcionDataGridViewTextBoxColumn1";
-            this.descripcionDataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // existenciaDataGridViewTextBoxColumn1
-            // 
-            this.existenciaDataGridViewTextBoxColumn1.DataPropertyName = "Existencia";
-            this.existenciaDataGridViewTextBoxColumn1.HeaderText = "Existencia";
-            this.existenciaDataGridViewTextBoxColumn1.Name = "existenciaDataGridViewTextBoxColumn1";
-            this.existenciaDataGridViewTextBoxColumn1.ReadOnly = true;
-            this.existenciaDataGridViewTextBoxColumn1.Width = 70;
-            // 
-            // precioDataGridViewTextBoxColumn1
-            // 
-            this.precioDataGridViewTextBoxColumn1.DataPropertyName = "Precio";
-            this.precioDataGridViewTextBoxColumn1.HeaderText = "Precio";
-            this.precioDataGridViewTextBoxColumn1.Name = "precioDataGridViewTextBoxColumn1";
-            this.precioDataGridViewTextBoxColumn1.ReadOnly = true;
-            this.precioDataGridViewTextBoxColumn1.Width = 70;
-            // 
-            // bindingSourceAgregados
-            // 
-            this.bindingSourceAgregados.DataSource = typeof(La_Sandwicheria.Modelo.Dominio.Producto);
-            // 
             // dataGridView1
             // 
             this.dataGridView1.AllowUserToAddRows = false;
@@ -147,33 +120,6 @@
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(285, 236);
             this.dataGridView1.TabIndex = 2;
-            // 
-            // descripcionDataGridViewTextBoxColumn
-            // 
-            this.descripcionDataGridViewTextBoxColumn.DataPropertyName = "Descripcion";
-            this.descripcionDataGridViewTextBoxColumn.HeaderText = "Descripcion";
-            this.descripcionDataGridViewTextBoxColumn.Name = "descripcionDataGridViewTextBoxColumn";
-            this.descripcionDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // existenciaDataGridViewTextBoxColumn
-            // 
-            this.existenciaDataGridViewTextBoxColumn.DataPropertyName = "Existencia";
-            this.existenciaDataGridViewTextBoxColumn.HeaderText = "Existencia";
-            this.existenciaDataGridViewTextBoxColumn.Name = "existenciaDataGridViewTextBoxColumn";
-            this.existenciaDataGridViewTextBoxColumn.ReadOnly = true;
-            this.existenciaDataGridViewTextBoxColumn.Width = 70;
-            // 
-            // precioDataGridViewTextBoxColumn
-            // 
-            this.precioDataGridViewTextBoxColumn.DataPropertyName = "Precio";
-            this.precioDataGridViewTextBoxColumn.HeaderText = "Precio";
-            this.precioDataGridViewTextBoxColumn.Name = "precioDataGridViewTextBoxColumn";
-            this.precioDataGridViewTextBoxColumn.ReadOnly = true;
-            this.precioDataGridViewTextBoxColumn.Width = 70;
-            // 
-            // bindingSourceProdAgregados
-            // 
-            this.bindingSourceProdAgregados.DataSource = typeof(La_Sandwicheria.Modelo.Dominio.Producto);
             // 
             // label2
             // 
@@ -205,6 +151,60 @@
             this.btnAceptar.UseVisualStyleBackColor = true;
             this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
+            // descripcionDataGridViewTextBoxColumn1
+            // 
+            this.descripcionDataGridViewTextBoxColumn1.DataPropertyName = "Descripcion";
+            this.descripcionDataGridViewTextBoxColumn1.HeaderText = "Descripcion";
+            this.descripcionDataGridViewTextBoxColumn1.Name = "descripcionDataGridViewTextBoxColumn1";
+            this.descripcionDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // existenciaDataGridViewTextBoxColumn1
+            // 
+            this.existenciaDataGridViewTextBoxColumn1.DataPropertyName = "Existencia";
+            this.existenciaDataGridViewTextBoxColumn1.HeaderText = "Existencia";
+            this.existenciaDataGridViewTextBoxColumn1.Name = "existenciaDataGridViewTextBoxColumn1";
+            this.existenciaDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.existenciaDataGridViewTextBoxColumn1.Width = 70;
+            // 
+            // precioDataGridViewTextBoxColumn1
+            // 
+            this.precioDataGridViewTextBoxColumn1.DataPropertyName = "Precio";
+            this.precioDataGridViewTextBoxColumn1.HeaderText = "Precio";
+            this.precioDataGridViewTextBoxColumn1.Name = "precioDataGridViewTextBoxColumn1";
+            this.precioDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.precioDataGridViewTextBoxColumn1.Width = 70;
+            // 
+            // bindingSourceAgregados
+            // 
+            this.bindingSourceAgregados.DataSource = typeof(La_Sandwicheria.Modelo.Dominio.Producto);
+            // 
+            // descripcionDataGridViewTextBoxColumn
+            // 
+            this.descripcionDataGridViewTextBoxColumn.DataPropertyName = "Descripcion";
+            this.descripcionDataGridViewTextBoxColumn.HeaderText = "Descripcion";
+            this.descripcionDataGridViewTextBoxColumn.Name = "descripcionDataGridViewTextBoxColumn";
+            this.descripcionDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // existenciaDataGridViewTextBoxColumn
+            // 
+            this.existenciaDataGridViewTextBoxColumn.DataPropertyName = "Existencia";
+            this.existenciaDataGridViewTextBoxColumn.HeaderText = "Existencia";
+            this.existenciaDataGridViewTextBoxColumn.Name = "existenciaDataGridViewTextBoxColumn";
+            this.existenciaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.existenciaDataGridViewTextBoxColumn.Width = 70;
+            // 
+            // precioDataGridViewTextBoxColumn
+            // 
+            this.precioDataGridViewTextBoxColumn.DataPropertyName = "Precio";
+            this.precioDataGridViewTextBoxColumn.HeaderText = "Precio";
+            this.precioDataGridViewTextBoxColumn.Name = "precioDataGridViewTextBoxColumn";
+            this.precioDataGridViewTextBoxColumn.ReadOnly = true;
+            this.precioDataGridViewTextBoxColumn.Width = 70;
+            // 
+            // bindingSourceProdAgregados
+            // 
+            this.bindingSourceProdAgregados.DataSource = typeof(La_Sandwicheria.Modelo.Dominio.Producto);
+            // 
             // VistaEditarAgregados
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -213,12 +213,13 @@
             this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.groupBox1);
             this.Name = "VistaEditarAgregados";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "EditarAgregados";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSourceAgregados)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSourceAgregados)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceProdAgregados)).EndInit();
             this.ResumeLayout(false);
 

@@ -14,7 +14,7 @@ namespace La_Sandwicheria.Modelo.Dominio
         public int Legajo { get; set; }
         public double Sueldo { get; set; }
 
-        public Cajero(string nombreyApe, int legajo, double sueldo) : base(nombreyApe)
+        public Cajero(string nombreyApe, long cuil, int legajo, double sueldo) : base(nombreyApe, cuil)
         {
             Legajo = legajo;
             Sueldo = sueldo;

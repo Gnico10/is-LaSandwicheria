@@ -13,6 +13,14 @@ namespace La_Sandwicheria.Modelo.Dominio
         public DateTime FechaDeCreación { get; set; }
         public List<LineaDeVenta> LineasDeVenta = new List<LineaDeVenta>();
         public Comprobante Comprobante { get; set; }
+        
+        //Alto acoplamiento:
+
+        //public Cliente Cliente { get; set; }
+        //public PuntoDeVenta PtoDeVenta { get; set; }
+        //public Empresa Empresa { get; set; }
+
+
         public double Total { get; set; }
 
 
@@ -23,10 +31,14 @@ namespace La_Sandwicheria.Modelo.Dominio
         
         public void ActualizarTotalVenta()
         {
-            foreach(var venta in LineasDeVenta)
+            var sumSubTotales = 0.0;
+
+            foreach (var lineaVenta in LineasDeVenta)
             {
-                Total += venta.SubTotal;
+                sumSubTotales += lineaVenta.SubTotal;
             }
+
+            Total = sumSubTotales;
         }
 
         public void AgregarLineaDeVenta(LineaDeVenta lineaDeVenta)

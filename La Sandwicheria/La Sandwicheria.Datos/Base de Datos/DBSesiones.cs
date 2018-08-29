@@ -10,15 +10,15 @@ namespace La_Sandwicheria.Datos.Base_de_Datos
 {
     public class DBSesiones
     {
-        public static List<Cajero> Cajeros= new List<Cajero>();
-        public static List<Sesion> Sesiones = new List<Sesion>();
+        public readonly static List<Cajero> Cajeros= new List<Cajero>();
+        public readonly static List<Sesion> Sesiones = new List<Sesion>();
 
 
         public static void CargarDatos()
         {
             //Intanciacion de Cajeros
-            var cajero1 = new Cajero("Eduardo Santana", 00001, 1000.00);
-            var cajero2 = new Cajero("Santiago Molina", 00002, 2200.00);
+            var cajero1 = new Cajero("Eduardo Santana", 27378654568, 00001, 1000.00);
+            var cajero2 = new Cajero("Santiago Molina", 28441345659, 00002, 2200.00);
 
             Cajeros.Add(cajero1);
             Cajeros.Add(cajero2);

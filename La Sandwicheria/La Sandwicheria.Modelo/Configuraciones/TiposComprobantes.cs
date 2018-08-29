@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace La_Sandwicheria.Capa_Transversal.Configuraciones
+namespace La_Sandwicheria.Modelo.Configuraciones
 {
     public enum TiposComprobantes
     { 

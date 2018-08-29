@@ -3,13 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "La Sandwicheria.Presentacion", "La Sandwicheria\La Sandwicheria.Presentacion.csproj", "{C2A5FC83-A994-4E7C-AE19-5E5B5AEFBEE2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "La_Sandwicheria.Presentacion", "La Sandwicheria\La_Sandwicheria.Presentacion.csproj", "{C2A5FC83-A994-4E7C-AE19-5E5B5AEFBEE2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "La Sandwicheria.Modelo", "La Sandwicheria.Modelo\La Sandwicheria.Modelo.csproj", "{3D371019-D7B4-426B-9384-99AA12461DF7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "La_Sandwicheria.Modelo", "La Sandwicheria.Modelo\La_Sandwicheria.Modelo.csproj", "{3D371019-D7B4-426B-9384-99AA12461DF7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "La Sandwicheria.Datos", "La Sandwicheria.Datos\La Sandwicheria.Datos.csproj", "{270C817C-82FE-47BE-97FC-A1F67DE2853B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "La_Sandwicheria.Datos", "La Sandwicheria.Datos\La_Sandwicheria.Datos.csproj", "{270C817C-82FE-47BE-97FC-A1F67DE2853B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "La Sandwicheria.Capa Transversal", "La Sandwicheria.Capa Transversal\La Sandwicheria.Capa Transversal.csproj", "{B241D32B-55C3-46BE-A718-8B29B324C05C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "La_Sandwicheria.Capa Transversal", "La Sandwicheria.Capa Transversal\La_Sandwicheria.Capa Transversal.csproj", "{B241D32B-55C3-46BE-A718-8B29B324C05C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

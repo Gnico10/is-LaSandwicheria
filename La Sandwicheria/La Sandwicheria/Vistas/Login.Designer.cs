@@ -136,6 +136,7 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.pictureBox1);
             this.Name = "Login";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBox1.ResumeLayout(false);

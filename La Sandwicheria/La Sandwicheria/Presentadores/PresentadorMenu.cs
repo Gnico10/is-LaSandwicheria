@@ -12,7 +12,6 @@ namespace La_Sandwicheria.Presentadores
     {
         public Cajero CajeroSesionAct { get;}
         public Turno TurnoAct { get; } 
-        public RTurno RegistroTurnos { get; set; }
 
         public PresentadorMenu(Cajero cajeroAct)
         {
@@ -23,7 +22,6 @@ namespace La_Sandwicheria.Presentadores
 
             CajeroSesionAct = cajeroAct;
             TurnoAct = new Turno(CajeroSesionAct);
-            RegistroTurnos = new RTurno();
         }
 
 
@@ -31,7 +29,6 @@ namespace La_Sandwicheria.Presentadores
         {
             
             TurnoAct.CerrarTurno();
-            RegistroTurnos.AgregarTurno(TurnoAct);
 
             //Guardar en DB
             DBTurnos.GuardarTurno(TurnoAct);

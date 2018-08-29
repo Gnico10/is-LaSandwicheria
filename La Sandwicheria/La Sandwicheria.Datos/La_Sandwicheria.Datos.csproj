@@ -1,0 +1,205 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{270C817C-82FE-47BE-97FC-A1F67DE2853B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>La_Sandwicheria.Datos</RootNamespace>
+    <AssemblyName>La Sandwicheria.Datos</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Base de Datos\DBAlmacen.cs" />
+    <Compile Include="Base de Datos\DBClientes.cs" />
+    <Compile Include="Base de Datos\DBComprobantes.cs" />
+    <Compile Include="Base de Datos\DBPtosVentas.cs" />
+    <Compile Include="Base de Datos\DBSesiones.cs" />
+    <Compile Include="Base de Datos\DBTurnos.cs" />
+    <Compile Include="Base de Datos\DBVentas.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="ServiceClienteVicente.cs" />
+    <Compile Include="ServicioAFIP.cs" />
+    <Compile Include="Web References\ar.gov.afip.wswhomo\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\org.dyndns.ds\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\ar.gov.afip.wswhomo\CbteTipoResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ar.gov.afip.wswhomo\ConceptoTipoResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ar.gov.afip.wswhomo\DocTipoResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ar.gov.afip.wswhomo\DummyResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ar.gov.afip.wswhomo\FECAEAGetResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ar.gov.afip.wswhomo\FECAEAResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ar.gov.afip.wswhomo\FECAEASinMovConsResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ar.gov.afip.wswhomo\FECAEASinMovResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ar.gov.afip.wswhomo\FECAEResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ar.gov.afip.wswhomo\FECompConsultaResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ar.gov.afip.wswhomo\FECotizacionResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ar.gov.afip.wswhomo\FEPaisResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ar.gov.afip.wswhomo\FEPtoVentaResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ar.gov.afip.wswhomo\FERecuperaLastCbteResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ar.gov.afip.wswhomo\FERegXReqResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ar.gov.afip.wswhomo\FETributoResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ar.gov.afip.wswhomo\IvaTipoResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ar.gov.afip.wswhomo\MonedaResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ar.gov.afip.wswhomo\OpcionalTipoResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ar.gov.afip.wswhomo\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\ar.gov.afip.wswhomo\service.wsdl" />
+    <None Include="Web References\org.dyndns.ds\AuthorizationService.wsdl" />
+    <None Include="Web References\org.dyndns.ds\AuthorizationService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\org.dyndns.ds\AuthorizationService0.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\org.dyndns.ds\AuthorizationService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\org.dyndns.ds\Autorizacion.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\org.dyndns.ds\LoginService.wsdl" />
+    <None Include="Web References\org.dyndns.ds\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\La Sandwicheria.Capa Transversal\La_Sandwicheria.Capa Transversal.csproj">
+      <Project>{b241d32b-55c3-46be-a718-8b29b324c05c}</Project>
+      <Name>La_Sandwicheria.Capa Transversal</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\La Sandwicheria.Modelo\La_Sandwicheria.Modelo.csproj">
+      <Project>{3D371019-D7B4-426B-9384-99AA12461DF7}</Project>
+      <Name>La_Sandwicheria.Modelo</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferenceUrl Include="http://ds.dyndns.org:9000/AuthorizationService%3fwsdl">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\org.dyndns.ds\</RelPath>
+      <UpdateFromURL>http://ds.dyndns.org:9000/AuthorizationService%3fwsdl</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>La_Sandwicheria_Datos_org_dyndns_ds_LoginService</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="https://wswhomo.afip.gov.ar/wsfev1/service.asmx%3fwsdl">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\ar.gov.afip.wswhomo\</RelPath>
+      <UpdateFromURL>https://wswhomo.afip.gov.ar/wsfev1/service.asmx%3fwsdl</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>La_Sandwicheria_Datos_ar_gov_afip_wswhomo_Service</CachedSettingsPropName>
+    </WebReferenceUrl>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

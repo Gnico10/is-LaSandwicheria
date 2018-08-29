@@ -1,33 +1,39 @@
-﻿using La_Sandwicheria.Capa_Transversal.Configuraciones;
-using La_Sandwicheria.Datos.ServiceReferenceVicente;
+﻿using La_Sandwicheria.Modelo.Configuraciones;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using La_Sandwicheria.Datos.org.dyndns.ds;
 
 namespace La_Sandwicheria.Datos
 {
     public class ServiceClienteVicente
     {
-        //public LoginServiceClient client = new LoginServiceClient(Configuraciones.CodigoDeGrupo);
-        //public Autorizacion autorizacion = new Autorizacion();
-        public LoginServiceClient client { get; set; }
+        public LoginService Client { get; set; }
         public Autorizacion Autorizacion { get; set; }
         
 
-        public void SolicitarAutorizacion()
+        public ServiceClienteVicente()
         {
-            using (client = new LoginServiceClient())
+            using (Client = new LoginService())
             {
-                Autorizacion = client.SolicitarAutorizacion(Configuraciones.CodigoDeGrupo);
+                try
+                {
+                    Autorizacion = Client.SolicitarAutorizacion(Configuracion.CodigoDeGrupo);
+                }
+                catch(Exception e)
+                {
+                    Console.WriteLine(e.Message);
+                    return;
+                }
+                
             }
         }
 
-
         public void CerrarClient()
         {
-            client.Close();
+            //Cerrar conexión
         }
     }
 }

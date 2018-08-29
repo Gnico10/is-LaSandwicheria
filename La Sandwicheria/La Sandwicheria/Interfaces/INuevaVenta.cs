@@ -11,5 +11,6 @@ namespace La_Sandwicheria.Interfaces
     {
         void ColocarVentaAct(Venta venta);
         void CargarLineasDeVenta(List<LineaDeVenta> lineasDeVenta);
+        void CerrarVenta();
     }
 }

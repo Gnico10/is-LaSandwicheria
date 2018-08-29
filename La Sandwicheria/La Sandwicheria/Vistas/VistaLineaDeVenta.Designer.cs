@@ -44,12 +44,12 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.txtCantidad = new System.Windows.Forms.TextBox();
             this.bindingSourceLineaDeVenta = new System.Windows.Forms.BindingSource(this.components);
             this.btnAceptar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.txtSubTotal = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
+            this.txtCantidad = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourcerRubro)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -200,15 +200,6 @@
             this.label3.TabIndex = 10;
             this.label3.Text = "Cantidad:";
             // 
-            // txtCantidad
-            // 
-            this.txtCantidad.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindingSourceLineaDeVenta, "Cantidad", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.txtCantidad.Location = new System.Drawing.Point(447, 331);
-            this.txtCantidad.Name = "txtCantidad";
-            this.txtCantidad.Size = new System.Drawing.Size(118, 20);
-            this.txtCantidad.TabIndex = 11;
-            this.txtCantidad.TextChanged += new System.EventHandler(this.txtCantidad_TextChanged);
-            // 
             // bindingSourceLineaDeVenta
             // 
             this.bindingSourceLineaDeVenta.DataSource = typeof(La_Sandwicheria.Modelo.Dominio.LineaDeVenta);
@@ -252,22 +243,32 @@
             this.label7.TabIndex = 14;
             this.label7.Text = "SubTotal:";
             // 
+            // txtCantidad
+            // 
+            this.txtCantidad.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindingSourceLineaDeVenta, "Cantidad", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.txtCantidad.Location = new System.Drawing.Point(444, 331);
+            this.txtCantidad.Name = "txtCantidad";
+            this.txtCantidad.Size = new System.Drawing.Size(100, 20);
+            this.txtCantidad.TabIndex = 17;
+            this.txtCantidad.TextChanged += new System.EventHandler(this.txtCantidad_TextChanged);
+            // 
             // VistaLineaDeVenta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(624, 441);
+            this.Controls.Add(this.txtCantidad);
             this.Controls.Add(this.txtSubTotal);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnAceptar);
-            this.Controls.Add(this.txtCantidad);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.groupBox1);
             this.Name = "VistaLineaDeVenta";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "VistaLineaDeVenta";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -290,7 +291,6 @@
         private System.Windows.Forms.ComboBox cbxRubro;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txtCantidad;
         private System.Windows.Forms.Button btnAceptar;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.TextBox txtSubTotal;
@@ -303,5 +303,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn precioDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource bindingSourceProducto;
         private System.Windows.Forms.BindingSource bindingSourceLineaDeVenta;
+        private System.Windows.Forms.TextBox txtCantidad;
     }
 }

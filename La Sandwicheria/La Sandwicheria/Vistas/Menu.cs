@@ -35,7 +35,6 @@ namespace La_Sandwicheria.Vistas
             {
                 _presentador.CerrarTurno();
                 Application.Exit();
-                //Close();
             }
         }
     }

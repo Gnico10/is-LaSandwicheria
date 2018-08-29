@@ -42,18 +42,49 @@ namespace La_Sandwicheria.Vistas
             //Cargar nueva linea de venta
             _presentador.CargarLineasDeVenta();
 
+            bindingSourceVenta.ResetBindings(false);
+
         }
 
         private void btnCancelarVenta_Click(object sender, EventArgs e)
         {
-            Close();
+            DialogResult opcion = MessageBox.Show("¿Está seguro de cancelar este proceso?", "Alerta", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (opcion == DialogResult.Yes)
+                Close();
         }
 
         private void btnAcabarVenta_Click(object sender, EventArgs e)
         {
-            _presentador.TerminarVenta();
-            MessageBox.Show("La nueva venta fue creada\n Comprobante emitido", "Exito!!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            if (bindingSourceLineasDeVenta.Count != 0)
+            {
+                var VistaTermVenta = new VistaTerminarVenta(this, _presentador.VentaActual,_presentador.TurnoAct);
+                VistaTermVenta.ShowDialog();
+            }
+
+            else
+            {
+                MessageBox.Show("La venta no posee lineas de venta", "Error!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        public void CerrarVenta()
+        {
             Close();
+        }
+
+        private void btnRemoverLineaVenta_Click(object sender, EventArgs e)
+        {
+            var LineaSelec = bindingSourceLineasDeVenta.Current as LineaDeVenta;
+            if (LineaSelec != null)
+            {
+                _presentador.RemoverLineaDeVenta(LineaSelec);
+            }
+            else
+            {
+                MessageBox.Show("No tiene una linea de venta selecionada", "Error!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            bindingSourceLineasDeVenta.ResetBindings(false);
+            bindingSourceVenta.ResetBindings(false);
         }
     }
 }
