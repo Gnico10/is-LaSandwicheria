@@ -1,4 +1,5 @@
-﻿using System;
+﻿using La_Sandwicheria.Modelo.Configuraciones;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,13 +14,17 @@ namespace La_Sandwicheria.Modelo.Dominio
         public DateTime FechaDeCreación { get; set; }
         public List<LineaDeVenta> LineasDeVenta = new List<LineaDeVenta>();
         public Comprobante Comprobante { get; set; }
-        
-        //Alto acoplamiento:
 
-        //public Cliente Cliente { get; set; }
-        //public PuntoDeVenta PtoDeVenta { get; set; }
-        //public Empresa Empresa { get; set; }
+        //Alto acoplamiento (AlgoNoEstaBien.jpg)
 
+        public Cliente Cliente { get; set; }
+        public PuntoDeVenta PtoDeVenta { get; set; }
+        public Empresa Empresa { get; set; }
+        public string CAE { get; set; }
+
+        public TiposConceptos TipoConcepto { get; set; }
+        public TiposIVA TipoImpuestoIVA { get; set; }
+        public TiposTributos TipoTributo { get; set; }
 
         public double Total { get; set; }
 
@@ -63,8 +68,7 @@ namespace La_Sandwicheria.Modelo.Dominio
 
         public Comprobante GenerarComprobante()
         {
-            var comprobante = new Comprobante(Total);
-            Comprobante = comprobante;
+            var comprobante = new Comprobante();
             return comprobante;
         }
 

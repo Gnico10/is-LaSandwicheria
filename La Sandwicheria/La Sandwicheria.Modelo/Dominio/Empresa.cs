@@ -15,7 +15,6 @@ namespace La_Sandwicheria.Modelo.Dominio
         public CondicionTributaria CondTributaria { get; set; }
         public TiposDocumentos TipoDocumento { get; set; }
         public long NroDocumento { get; set; }
-        public string Moneda => "PES";
         public List<PuntoDeVenta> PtosDeVenta = new List<PuntoDeVenta>();
 
         //Singleton

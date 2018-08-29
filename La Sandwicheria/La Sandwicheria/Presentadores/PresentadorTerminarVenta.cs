@@ -59,16 +59,15 @@ namespace La_Sandwicheria.Presentadores
 
         internal bool AcabarVenta(PuntoDeVenta ptoDeVenta)
         {
+            _ventaAct.Empresa = Empresa.Intancia();
+            _ventaAct.Cliente = Cliente;
+            _ventaAct.PtoDeVenta = ptoDeVenta;
+            _ventaAct.Comprobante = _ventaAct.GenerarComprobante();
 
-            var comprobante = _ventaAct.GenerarComprobante();
-            comprobante.Empresa = Empresa.Intancia();
-            comprobante.Cliente = Cliente;
-            comprobante.PtoDeVenta = ptoDeVenta;
-
-            comprobante.TipoComprobante = comprobante.ObtenerTipoComprobante();
-            comprobante.TipoConcepto = TiposConceptos.Producto;
-            comprobante.TipoImpuestoIVA = TiposIVA.IVA_0;
-            comprobante.TipoTributo = TiposTributos.Otro;
+            _ventaAct.Comprobante.TipoComprobante = _ventaAct.Comprobante.ObtenerTipoComprobante(_ventaAct.Empresa,_ventaAct.Cliente);
+            _ventaAct.TipoConcepto = TiposConceptos.Producto;
+            _ventaAct.TipoImpuestoIVA = TiposIVA.IVA_0;
+            _ventaAct.TipoTributo = TiposTributos.Otro;
 
             //Sistema Autorización
 
@@ -96,13 +95,13 @@ namespace La_Sandwicheria.Presentadores
 
                 if (EstadoAppServer == "OK" && EstadoDBServer == "OK")
                 {
-                    var UltimoCompAutorizado = ServicioAFIP.ObtenerUltimaFacturaAutorizada(comprobante.PtoDeVenta.NroPuntoDeVenta, (int)comprobante.TipoComprobante);
+                    var UltimoCompAutorizado = ServicioAFIP.ObtenerUltimaFacturaAutorizada(_ventaAct.PtoDeVenta.NroPuntoDeVenta, (int)_ventaAct.Comprobante.TipoComprobante);
                     var NroUltimoAutorizado = UltimoCompAutorizado.CbteNro;
 
-                    comprobante.NroComprobante = NroUltimoAutorizado + 1;
+                    _ventaAct.Comprobante.NroComprobante = NroUltimoAutorizado + 1;
 
-                    var FECAE = ServicioAFIP.AutorizarFactura(comprobante);
-                    comprobante.CAE = FECAE.FeDetResp[0].CAE;
+                    var FECAE = ServicioAFIP.AutorizarFactura(_ventaAct);
+                    _ventaAct.CAE = FECAE.FeDetResp[0].CAE;
                 }
 
             }
@@ -120,7 +119,7 @@ namespace La_Sandwicheria.Presentadores
 
             //Guardar en DB
             DBVentas.GuardarVenta(_ventaAct);
-            DBComprobantes.GuardarComprobante(comprobante);
+            DBComprobantes.GuardarComprobante(_ventaAct.Comprobante);
             //-------------
 
             return true;
