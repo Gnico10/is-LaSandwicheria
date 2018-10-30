@@ -9,7 +9,7 @@ namespace La_Sandwicheria.Datos.Base_de_Datos
 {
     public class DBClientes
     {
-        public static  List<Cliente> Clientes = new List<Cliente>();
+        public static List<Cliente> Clientes = new List<Cliente>();
 
         public static void GuardarCliete(Cliente cliente)
         {
