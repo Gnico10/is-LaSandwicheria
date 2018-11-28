@@ -28,6 +28,6 @@ namespace La_Sandwicheria.Modelo.Dominio
         {
             ListaProductos.Remove(producto);
         }
-
+        
     }
 }

@@ -15,12 +15,12 @@ namespace La_Sandwicheria.Presentadores
     class PresentadorTerminarVenta
     {
         private readonly ITerminarVenta _vistaTerminarVenta;
-        private readonly Venta _ventaAct;
+        private readonly Pedido _ventaAct;
         private readonly Turno _turnoAct;
         
         public Cliente Cliente { get; set; }
 
-        public PresentadorTerminarVenta(ITerminarVenta vistaTerminarVenta, Venta comprobanteActual, Turno turnoActual)
+        public PresentadorTerminarVenta(ITerminarVenta vistaTerminarVenta, Pedido comprobanteActual, Turno turnoActual)
         {
             _vistaTerminarVenta = vistaTerminarVenta;
             _ventaAct = comprobanteActual;

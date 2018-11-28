@@ -18,7 +18,7 @@ namespace La_Sandwicheria.Presentadores
         private readonly INuevaVenta _vista;
         public Cajero CajeroSesionAct { get; set; }
         public Turno TurnoAct { get; set; }
-        public Venta VentaActual { get; }
+        public Pedido VentaActual { get; }
 
         public PresentadorNuevaVenta(Cajero cajero, Turno turno,INuevaVenta vista)
         {
@@ -40,7 +40,7 @@ namespace La_Sandwicheria.Presentadores
             _vista.ColocarVentaAct(VentaActual);
         }
 
-        internal void RemoverLineaDeVenta(LineaDeVenta lineaSelec)
+        internal void RemoverLineaDeVenta(LineaDePedido lineaSelec)
         {
             VentaActual.QuitarLineaDeVenta(lineaSelec);
         }

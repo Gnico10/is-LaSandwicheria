@@ -20,8 +20,8 @@ namespace La_Sandwicheria.Modelo.Dominio
             Sueldo = sueldo;
         }
 
-        public Venta InicarVenta() {
-            var VentaActual = new Venta(this);
+        public Pedido InicarVenta() {
+            var VentaActual = new Pedido(this);
             return VentaActual;
         }
 

@@ -17,7 +17,7 @@ namespace La_Sandwicheria.Vistas
     {
         private readonly PresentadorLineaDeVenta _presentador;
 
-        public VistaLineaDeVenta(Venta ventaAct)
+        public VistaLineaDeVenta(Pedido ventaAct)
         {
             InitializeComponent();
             _presentador = new PresentadorLineaDeVenta(ventaAct,this);  
@@ -35,7 +35,7 @@ namespace La_Sandwicheria.Vistas
             bindingSourcerRubro.ResetBindings(false);
         }
 
-        public void ColocarLineaDeVenta(LineaDeVenta LineaDeVenta)
+        public void ColocarLineaDeVenta(LineaDePedido LineaDeVenta)
         {
             bindingSourceLineaDeVenta.DataSource = LineaDeVenta;
             bindingSourceLineaDeVenta.ResetBindings(false);

@@ -202,7 +202,7 @@
             // 
             // bindingSourceLineaDeVenta
             // 
-            this.bindingSourceLineaDeVenta.DataSource = typeof(La_Sandwicheria.Modelo.Dominio.LineaDeVenta);
+            this.bindingSourceLineaDeVenta.DataSource = typeof(La_Sandwicheria.Modelo.Dominio.LineaDePedido);
             // 
             // btnAceptar
             // 

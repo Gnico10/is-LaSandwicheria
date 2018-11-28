@@ -11,6 +11,6 @@ namespace La_Sandwicheria.Interfaces
     {
         void CargarRubros(List<Rubro> Rubros);
         void CargarProductos(List<Producto> Productos);
-        void ColocarLineaDeVenta(LineaDeVenta LineadeVenta);
+        void ColocarLineaDeVenta(LineaDePedido LineadeVenta);
     }
 }

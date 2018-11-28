@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace La_Sandwicheria.Modelo.Dominio
 {
-    public class LineaDeVenta
+    public class LineaDePedido
     {
         public int Id { get; set; }
         public Producto Producto { get; set; }
@@ -15,9 +15,9 @@ namespace La_Sandwicheria.Modelo.Dominio
 
         public double SubTotal { get; set; }
 
-        public LineaDeVenta(int cantidad = 1) { Cantidad = cantidad; }
+        public LineaDePedido(int cantidad = 1) { Cantidad = cantidad; }
 
-        public LineaDeVenta(Producto producto, int cantidad = 1)
+        public LineaDePedido(Producto producto, int cantidad = 1)
         {
             Producto = producto;
             Cantidad = cantidad;

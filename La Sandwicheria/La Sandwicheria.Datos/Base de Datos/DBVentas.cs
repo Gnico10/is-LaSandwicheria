@@ -9,9 +9,9 @@ namespace La_Sandwicheria.Datos.Base_de_Datos
 {
     public class DBVentas
     {
-        public static List<Venta> Ventas = new List<Venta>();
+        public static List<Pedido> Ventas = new List<Pedido>();
 
-        public static void GuardarVenta(Venta venta)
+        public static void GuardarVenta(Pedido venta)
         {
            Ventas.Add(venta);
         }

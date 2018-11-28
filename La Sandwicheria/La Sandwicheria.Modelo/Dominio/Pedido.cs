@@ -7,15 +7,15 @@ using System.Threading.Tasks;
 
 namespace La_Sandwicheria.Modelo.Dominio
 {
-    public class Venta
+    public class Pedido
     {
         public int Id { get; set; }
         public Cajero CajeroDeVenta { get; set; }
         public DateTime FechaDeCreación { get; set; }
-        public List<LineaDeVenta> LineasDeVenta = new List<LineaDeVenta>();
+        public List<LineaDePedido> LineasDeVenta = new List<LineaDePedido>();
         public Comprobante Comprobante { get; set; }
 
-        //Alto acoplamiento (AlgoNoEstaBien.jpg)
+        //Alto acoplamiento
 
         public Cliente Cliente { get; set; }
         public PuntoDeVenta PtoDeVenta { get; set; }
@@ -29,30 +29,17 @@ namespace La_Sandwicheria.Modelo.Dominio
         public double Total { get; set; }
 
 
-        public Venta(Cajero cajeroVenta) {
+        public Pedido(Cajero cajeroVenta) {
             CajeroDeVenta = cajeroVenta;
             FechaDeCreación = DateTime.Now;
         }
-        
-        public void ActualizarTotalVenta()
-        {
-            var sumSubTotales = 0.0;
-
-            foreach (var lineaVenta in LineasDeVenta)
-            {
-                sumSubTotales += lineaVenta.SubTotal;
-            }
-
-            Total = sumSubTotales;
-        }
-
-        public void AgregarLineaDeVenta(LineaDeVenta lineaDeVenta)
+        public void AgregarLineaDeVenta(LineaDePedido lineaDeVenta)
         {
             LineasDeVenta.Add(lineaDeVenta);
             ActualizarTotalVenta();
         }
 
-        public void QuitarLineaDeVenta(LineaDeVenta lineaDeVenta)
+        public void QuitarLineaDeVenta(LineaDePedido lineaDeVenta)
         {
             LineasDeVenta.Remove(lineaDeVenta);
             ActualizarTotalVenta();
@@ -72,9 +59,22 @@ namespace La_Sandwicheria.Modelo.Dominio
             return comprobante;
         }
 
-        public LineaDeVenta CrearLineaDeVenta()
+        public LineaDePedido CrearLineaDeVenta()
         {
-            return new LineaDeVenta();
+            return new LineaDePedido();
         }
+
+        private void ActualizarTotalVenta()
+        {
+            var sumSubTotales = 0.0;
+
+            foreach (var lineaVenta in LineasDeVenta)
+            {
+                sumSubTotales += lineaVenta.SubTotal;
+            }
+
+            Total = sumSubTotales;
+        }
+
     }
 }

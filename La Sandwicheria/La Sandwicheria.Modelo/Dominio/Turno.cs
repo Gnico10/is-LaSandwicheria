@@ -15,8 +15,8 @@ namespace La_Sandwicheria.Modelo.Dominio
         public DateTime FechaYHoraInicio { get; set; }
         public DateTime FechaYHoraCierre { get; set; }
         public double Rendicion { get; set; }
-        public List<Venta> VentasDelTurno = new List<Venta>();
-        private Estados _Estado { get; set; }
+        public List<Pedido> VentasDelTurno = new List<Pedido>();
+        public Estados _Estado { get; set; }
 
         public Turno(Cajero cajero, Estados estado = Estados.Abierto)
         {
@@ -27,7 +27,7 @@ namespace La_Sandwicheria.Modelo.Dominio
 
         }
 
-        public void AgregarVenta(Venta venta)
+        public void AgregarVenta(Pedido venta)
         {
             VentasDelTurno.Add(venta);
             ActualizarRendicion();

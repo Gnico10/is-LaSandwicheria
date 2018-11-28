@@ -23,12 +23,12 @@ namespace La_Sandwicheria.Vistas
             _presentador = new PresentadorNuevaVenta(cajeroAct, turnoAct, this);
         }
 
-        public void ColocarVentaAct(Venta venta)
+        public void ColocarVentaAct(Pedido venta)
         {
             bindingSourceVenta.DataSource = venta;
         }
 
-        public void CargarLineasDeVenta(List<LineaDeVenta> lineasDeVenta)
+        public void CargarLineasDeVenta(List<LineaDePedido> lineasDeVenta)
         {
             bindingSourceLineasDeVenta.DataSource = lineasDeVenta;
             bindingSourceLineasDeVenta.ResetBindings(false);
@@ -74,7 +74,7 @@ namespace La_Sandwicheria.Vistas
 
         private void btnRemoverLineaVenta_Click(object sender, EventArgs e)
         {
-            var LineaSelec = bindingSourceLineasDeVenta.Current as LineaDeVenta;
+            var LineaSelec = bindingSourceLineasDeVenta.Current as LineaDePedido;
             if (LineaSelec != null)
             {
                 _presentador.RemoverLineaDeVenta(LineaSelec);

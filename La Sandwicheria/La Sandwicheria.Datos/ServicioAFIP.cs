@@ -50,7 +50,7 @@ namespace La_Sandwicheria.Datos
         }
 
         //Terminar
-        public FECAEResponse AutorizarFactura(Venta ventaFactura)
+        public FECAEResponse AutorizarFactura(Pedido ventaFactura)
         {
             var FECabeceraReq = new FECAECabRequest();
 

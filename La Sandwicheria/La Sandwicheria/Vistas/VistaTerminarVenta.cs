@@ -18,7 +18,7 @@ namespace La_Sandwicheria.Vistas
         private readonly PresentadorTerminarVenta _presentador;
         private readonly INuevaVenta _vistaVenta;
 
-        public VistaTerminarVenta(INuevaVenta vistaVenta, Venta venta, Turno turno)
+        public VistaTerminarVenta(INuevaVenta vistaVenta, Pedido venta, Turno turno)
         {
             _vistaVenta = vistaVenta;
 

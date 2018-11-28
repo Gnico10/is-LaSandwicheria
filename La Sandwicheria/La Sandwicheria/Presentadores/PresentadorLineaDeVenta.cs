@@ -12,10 +12,10 @@ namespace La_Sandwicheria.Presentadores
     public class PresentadorLineaDeVenta
     {
         private readonly ILineaDeVenta _vista;
-        public Venta VentaAct { get; set;}
-        public LineaDeVenta LineaActual { get; set; }
+        public Pedido VentaAct { get; set;}
+        public LineaDePedido LineaActual { get; set; }
 
-        public PresentadorLineaDeVenta(Venta ventAct, ILineaDeVenta vista)
+        public PresentadorLineaDeVenta(Pedido ventAct, ILineaDeVenta vista)
         {
             VentaAct = ventAct;
             LineaActual = VentaAct.CrearLineaDeVenta();

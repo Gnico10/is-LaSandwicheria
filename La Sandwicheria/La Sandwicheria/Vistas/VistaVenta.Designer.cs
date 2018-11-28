@@ -121,7 +121,7 @@
             // 
             // bindingSourceLineasDeVenta
             // 
-            this.bindingSourceLineasDeVenta.DataSource = typeof(La_Sandwicheria.Modelo.Dominio.LineaDeVenta);
+            this.bindingSourceLineasDeVenta.DataSource = typeof(La_Sandwicheria.Modelo.Dominio.LineaDePedido);
             // 
             // btnNuevaLineaVenta
             // 
@@ -157,7 +157,7 @@
             // 
             // bindingSourceVenta
             // 
-            this.bindingSourceVenta.DataSource = typeof(La_Sandwicheria.Modelo.Dominio.Venta);
+            this.bindingSourceVenta.DataSource = typeof(La_Sandwicheria.Modelo.Dominio.Pedido);
             // 
             // label3
             // 
